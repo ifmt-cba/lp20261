@@ -50,29 +50,65 @@ def q8():
     print(f'{num1}-{num2} = {num1-num2}')
 
 #9. Faça um programa que leia um número real e imprima ¼ deste número.
+def q9():
+    num = float(input('Digite um número real: '))
+    print(f'¼ de {num} = {num/4}')
 
 #10. Faça um programa que leia três números reais e calcule a
 #    média aritmética destes números. Ao final, o programa deve
 #    imprimir o resultado do cálculo.
+def q10():
+    num1 = float(input('1 Número Real: '))
+    num2 = float(input('2 Número Real: '))
+    num3 = float(input('3 Número Real: '))
+    media = (num1 + num2 + num3) / 3
+    print(f'Média de {num1}, {num2} e {num3} é igual a {media:.2f}')
 
 #11. Faça um programa que leia dois números reais e calcule as
 #    quatro operações básicas entre estes dois números, adição,
 #    subtração,multiplicação e divisão. Ao final, o programa
 #    deve imprimir os resultados dos cálculos.
+def q11():
+    num1 = float(input('1 Número: '))
+    num2 = float(input('2 Número: '))
+    print(f'{num1}+{num2} = {num1+num2}')
+    print(f'{num1}-{num2} = {num1-num2}')
+    print(f'{num1}*{num2} = {num1*num2}')
+    print(f'{num1}/{num2} = {num1/num2}')
 
 #12. Faça um programa que leia um número real e calcule o
 #    quadrado deste número. Ao final, o programa deve
 #    imprimir o resultado do cálculo.
+def q12():
+    num = float(input('Digite um número real: '))
+    print(f'{num}*{num} = {num*num}')               # não recomendado
+    print(f'math.pow({num},2) = {math.pow(num,2)}') # recomendado para float
+    print(f'{num}**2 = {num**2}')                   # recomendado para int
 
 #13. Faça um programa que leia o saldo de uma conta poupança e
 #    imprima o novo saldo, considerando um reajuste de 2%.
+def q13():
+    saldo = float(input('Digite o saldo da conta: R$ '))
+    saldo = round(saldo, 2) # arredonda o valor para 2 casas decimais
+    print(f'Saldo de R$ {saldo:.2f} + 2% = R$ {saldo*1.02}')
 
 #14. Faça um programa que leia a base e a altura de um retângulo
 #    e imprima o perímetro (base*2 + altura*2) e a área (base * altura).    
+def q14():
+    base = float(input('Digite a base do retângulo: '))
+    altura = float(input('Digite a altura do retângulo'))
+    print(f'Perímetro = {base*2 + altura*2}')
+    print(f'Área: {base*altura}')
 
 #15. Faça um programa que leia o valor de um produto, o percentual
 #    do desconto desejado e imprima o valor do desconto e o valor
 #    do produto subtraindo o desconto.
+def q15():
+    valor = round(float(input('Valor do produto: R$ ')), 2)
+    desconto_desejado = float(input('% do desconto desejado: '))
+    valor_desconto = valor*desconto_desejado/100
+    print(f'Valor do desconto: R$ {valor_desconto:.2f}')
+    print(f'Valor final do produto: R$ {valor-valor_desconto:.2f}')
 
 #16. Faça um programa que calcule o reajuste do salário de um
 #    funcionário. Para isso, o programa deverá ler o salário atual
@@ -108,3 +144,7 @@ def q8():
 #20. Faça um programa que efetue a apresentação do valor da conversão
 #    em real (R$) de um valor lido em dólar (US$). Para isso, será
 #    necessário também ler o valor da cotação do dólar.
+
+questao = input('Digite a questão a ser executada: ')
+eval(f'q{questao}()')  # eval transforma uma string (texto) em comando python
+
