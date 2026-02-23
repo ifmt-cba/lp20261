@@ -26,16 +26,28 @@ def q5():
     num2 = float(input('Digite outro número real: '))
     print(f'Os números digitados foram: {num1:.1f} e {num2:.2f}')
 
-q5()
-
 #6. Faça um programa que leia um número inteiro e imprima o seu
 #   antecessor e o seu sucessor.
+def q6():
+    num = int(input('Digite um número inteiro: '))
+    print(f'Sucessor: {num+1}')
+    print(f'Antecessor: {num-1}')
 
 #7. Faça um programa que leia o nome o endereço e o telefone de
 #   um cliente e ao final, imprima esses dados.
+def q7():
+    nome = input('Nome: ')
+    endereco = input('Endereço: ')
+    telefone = input('Telefone: ')
+    print('\nNOME\t\tEND\t\tFONE')  # \t é tabulação (TAB) e \n é new line (quebra de linha)
+    print(f'{nome}\t\t{endereco}\t\t{telefone}')
 
 #8. Faça um programa que leia dois números inteiros e imprima a
 #   subtração deles.
+def q8():
+    num1 = int(input('1 Número: '))
+    num2 = int(input('2 Número: '))
+    print(f'{num1}-{num2} = {num1-num2}')
 
 #9. Faça um programa que leia um número real e imprima ¼ deste número.
 
