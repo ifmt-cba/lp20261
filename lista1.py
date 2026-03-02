@@ -17,8 +17,14 @@ def q3():
 
 #4. Faça um programa que leia e imprima um número inteiro.
 def q4():
-    numero = int(input('Digite um número inteiro: '))
-    print(f'Você digitou: {numero}')
+    numero = 0
+    try:
+        numero = int(input('Digite um número inteiro: '))
+        print(f'Você digitou: {numero}')
+    except ValueError:
+        print('O valor digitado é inválido! Apenas valores inteiros são aceitos. Tente novamente.')
+    except:
+        print('Erro desconhecido! Contate o administrador do sistema.') 
 
 #5. Faça um programa que leia dois números reais e os imprima.
 def q5():
