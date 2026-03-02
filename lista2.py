@@ -178,5 +178,12 @@ def exemploCaso():      # serve apenas para valores conhecidos (poucos) e exatos
 #0,4 1º e 2º grupos
 #0,5 1º, 2º e 3º grupos
 
-opcao = input('Digite o número da questão: ')
-eval(f'q{opcao}()')
+try:
+    opcao = int(input('Digite o número da questão: '))
+    if opcao < 1 or opcao > 25:
+        raise Exception('Questão inválida, valores devem estar entre 1 e 25')
+    eval(f'q{opcao}()')
+except ValueError:
+    print('O número da questão deve ser numérico (inteiro)!')
+except Exception as e:
+    print(e)
