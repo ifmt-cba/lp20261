@@ -86,6 +86,14 @@ def q5():
 #   estatutários. O valor máximo da prestação não poderá ultrapassar 30% do salário
 #   bruto. Faça um programa que permita entrar com o salário bruto
 #   e o valor da prestação e informar se o empréstimo pode ou não ser concedido.
+def q6():
+    salario = float(input('Salário: R$ '))
+    prestacao = float(input('Valor da prestação: R$ '))
+    prestacao_maxima = salario * 0.3
+    if prestacao > prestacao_maxima:
+        print(f'Crédito não autorizado. Prestação máxima: R$ {prestacao_maxima}')
+    else:
+        print(f'Crédito concedido!')
 
 #7. Faça um programa que leia um número e indique se o número está compreendido
 #   entre 20 e 50 ou não.
