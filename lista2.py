@@ -37,16 +37,44 @@ def exemploCaso():      # serve apenas para valores conhecidos (poucos) e exatos
 
 #1. Faça um programa que leia dois valores numéricos inteiros e efetue
 #   a adição, caso o resultado seja maior que 10, apresentá-lo.
+def q1():
+    num1 = int(input('Digite um inteiro: '))
+    num2 = int(input('Digite outro inteiro: '))
+    adicao = num1 + num2
+    if adicao > 10:
+        print(f'{num1} + {num2} = {adicao}')
 
 #2. Faça um programa que leia dois valores inteiros e efetue a adição.
 #   Caso o valor somado seja maior que 20, este deverá ser apresentado
 #   somando-se a ele mais 8, caso o valor somado seja menor ou igual a
 #   20, este deverá ser apresentado subtraindo-se 5.
-
+def q2():
+    num1 = int(input('Digite um inteiro: '))
+    num2 = int(input('Digite outro inteiro: '))
+    adicao = num1 + num2
+    if adicao > 20:
+        print(f'{num1} + {num2} + 8 = {adicao+8}')
+    else:
+        print(f'{num1} + {num2} - 5 = {adicao-5}')
+        
 #3. Faça um programa que leia um número e imprima uma das duas mensagens:
 #   "É múltiplo de 3"ou "Não é múltiplo de 3".
+def q3():
+    num = int(input('Digite um numero inteiro: '))
+    if num % 3 == 0: # se o resto da divisão é zero
+        print(f'{num} é múltiplo de 3')
+    else:
+        print(f'{num} não é múltiplo de 3')
+
 
 #4. Faça um programa que leia um número e informe se ele é ou não divisível por 5.
+def q4():
+    num = int(input('Digite um numero inteiro: '))
+    if num % 5 == 0: # se o resto da divisão é zero
+        print(f'{num} é divisível por 5')
+    else:
+        print(f'{num} não é divisível por 5')
+
 
 #5. Faça um programa que leia um número e informe se ele é divisível por 3 e por 7.
 
