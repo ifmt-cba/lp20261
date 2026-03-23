@@ -1,6 +1,9 @@
 '''
 Lista de Exercícios referentes a estruturas de iteração (repetição)
 '''
+from util import inputint, inputfloat
+import random
+
 def exemploPara(): # Quando se sabe a qtde de repetições
     for c in range(10): #0-9 Baseado em intervalo (inicio e fim)
         print(c)
@@ -11,11 +14,17 @@ def exemploPara(): # Quando se sabe a qtde de repetições
 def exemploEnquanto(): # Quando não se sabe quantas iterações serão necessárias
     opcao=-1
     while opcao != 0: #baseado em uma condição (True|False)
-        opcao = int(input('Opção: '))
+        opcao = inputint('Opção: ')
 
 #1.Faça um programa que imprima todos os números de 1 até 100.
+def q1():
+    for c in range(1,101):
+        print(c, end=' ')
 
 #2. Faça um programa que imprima todos os números pares de 100 até 1.
+def q2():
+    for c in range(100,1,-2):
+        print(c, end=' ')
 
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
 
