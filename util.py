@@ -1,4 +1,16 @@
+import random
+
 def inputint(msg="Digite um valor inteiro: ",min=None,max=None):
+    """
+    Permite obter uma entrada de dados no formato inteiro fornecida pelo usuário.
+
+    :param msg: Mensagem a ser apresentada para o usuário
+    :param min: Menor valor que pode ser aceito para um número inteiro
+    :param max: Maior valor que pode ser aceito para um número inteiro
+    :raises ValueError: Caso o valor fornecido não seja um número inteiro
+    :raises Exception: Caso o valor inteiro fornecido não esteja dentro dos parâmetros aceitos de min e max
+    :return: Um número inteiro 
+    """
     erro = True
     while erro == True:
         try:
@@ -33,3 +45,11 @@ def inputfloat(msg="Digite um número real: ",min=None,max=None):
             print ('ERRO: Valor informado não é um número real!')
         except Exception as e:
             print(e)
+
+def gerar_palavra(min=4,max=10):
+    qtde_letras = random.randrange(min,max+1)
+    palavra=''
+    for _ in range(qtde_letras):
+        palavra += chr(random.randrange(65,91))
+    return palavra
+

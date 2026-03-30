@@ -1,7 +1,7 @@
 '''
 Lista de Exercícios referentes a estruturas de iteração (repetição)
 '''
-from util import inputint, inputfloat
+from util import inputint, inputfloat, gerar_palavra
 import random
 
 def exemploPara(): # Quando se sabe a qtde de repetições
@@ -10,6 +10,7 @@ def exemploPara(): # Quando se sabe a qtde de repetições
     for c in range(1,10): #1-9
         print(c)
     for c in range(1,10,2): #1,3,5,7,9
+        print(c)
 
 def exemploEnquanto(): # Quando não se sabe quantas iterações serão necessárias
     opcao=-1
@@ -27,10 +28,20 @@ def q2():
         print(c, end=' ')
 
 #3. Faça um programa que imprima os múltiplos de 5, no intervalo de 1 até 500.
+def q3():
+    for c in range(5,500,5):
+        print(c, end=' ')
 
 #4. Faça um programa que permita entrar com o nome, a idade e o sexo de 20
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
 #e tiver mais de 21 anos.
+def q4():
+    for p in range(20):
+        nome = gerar_palavra()
+        idade = random.randrange(0,121)
+        sexo = random.choice(('M','F'))
+        if sexo == 'M' and idade >= 21:
+            print(f'A pessoa {nome} de sexo {sexo} tem {idade} anos.')
 
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
