@@ -35,17 +35,24 @@ def q3():
 #4. Faça um programa que permita entrar com o nome, a idade e o sexo de 20
 #pessoas.O programa deve imprimir o nome da pessoa se ela for do sexo masculino
 #e tiver mais de 21 anos.
-def q4():
-    for p in range(20):
-        nome = gerar_palavra()
-        idade = random.randrange(0,121)
-        sexo = random.choice(('M','F'))
+def q4() -> None:
+    for _ in range(20):
+        nome: str = gerar_palavra()
+        idade: int = random.randrange(0,121)
+        sexo: str = random.choice(('M','F'))
         if sexo == 'M' and idade >= 21:
-            print(f'A pessoa {nome} de sexo {sexo} tem {idade} anos.')
+            print(f'A pessoa {nome:10} de sexo {sexo} tem {idade} anos.')
 
 #5. Sabendo-se que a unidade lógica e aritmética calcula o produto através de somas
 #sucessivas, crie um programa que calcule o produto de dois números inteiros
 #lidos. Suponha que os números lidos sejam positivos.
+def q5() -> None:
+    multiplicando: int = inputint('Multiplicando: ')
+    multiplicador: int = inputint('Multiplicador: ')
+    produto: int = 0
+    for _ in range(multiplicando):
+        produto += multiplicador
+    print(f'{multiplicando} * {multiplicador} = {produto}')
 
 #6. Crie um programa que imprima os 20 primeiros termos da série de Fibonacci.
 #Observação: os dois primeiros termos desta série são 1 e 1 e os demais são gerados
@@ -53,6 +60,14 @@ def q4():
 #• 1 + 1 = 2, terceiro termo;
 #• 1 + 2 = 3, quarto termo, etc.
 # 1 1 2 3 5 8 13 21
+def q6() -> None:
+    anterior: int = 0
+    atual: int = 1
+    for _ in range(20):
+        print(atual, end=' ')
+        proximo = atual + anterior
+        anterior = atual
+        atual = proximo
 
 #7. Crie um programa que permita entrar com o nome, a nota da
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
@@ -289,6 +304,8 @@ def q4():
 #analisadas.
 #Obs.: Para encerrar a entrada de dados, digite um número menor que zero para a
 #idade.
+def q30() -> None:
+    raise NotImplementedError('q30() ainda não foi codificada')
 
 questao = int(input('Questão a ser executada: '))
 eval(f'q{questao}()')
