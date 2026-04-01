@@ -3,6 +3,11 @@ Lista de Exercícios referentes a estruturas de iteração (repetição)
 '''
 from util import inputint, inputfloat, gerar_palavra
 import random
+from typing import Final
+
+VERMELHO: Final = '\033[31m'
+VERDE: Final = '\033[32m'
+RESET: Final = '\033[m'
 
 def exemploPara(): # Quando se sabe a qtde de repetições
     for c in range(10): #0-9 Baseado em intervalo (inicio e fim)
@@ -73,6 +78,19 @@ def q6() -> None:
 #prova 1 e da prova 2 de 15 alunos. Ao final, imprimir uma listagem, contendo:
 #nome, nota da prova 1, nota da prova 2, e média das notas de cada aluno. Ao final,
 #imprimir a média geral da turma.
+def q7() -> None:
+    QTDE_ALUNOS: Final = 15
+    diario = f'{'NOME':<11}{'N1':>5}{'N2':>5}{'MEDIA':^7}\n\n'
+    media_geral: float = 0.0
+    for _ in range(QTDE_ALUNOS):
+        nome: str = gerar_palavra()
+        prova1: float = round(random.random()*10,1)
+        prova2: float = round(random.random()*10,1)
+        media: float = round((prova1 + prova2)/2,1)
+        media_geral += media
+        diario += f'{nome:<11}{prova1:>5}{prova2:>5}{VERMELHO if media < 6 else VERDE}{media:>5}{RESET}\n'
+    print(diario)
+    print(f'\nMédia da Turma: {media_geral/QTDE_ALUNOS:.1f}')
 
 #8. Faça um programa que permita entrar com o nome e o salário bruto de 10 pessoas.
 #Após ler os dados, imprimir o nome e o valor da alíquota do imposto de renda
