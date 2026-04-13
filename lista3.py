@@ -122,11 +122,42 @@ def q7() -> None:
 #11. Construa um programa que leia vários números e informe quantos números
 #entre 100 e 200 foram digitados. Quando o valor 0 (zero) for lido, o algoritmo
 #deverá cessar sua execução.
+def q11() -> None:
+    numero: int = 1
+    cont_100_200: int = 0
+    qtde_numeros: int = 0
+    while numero != 0:
+        numero = random.randrange(0,200)
+        # print(numero)
+        cont_100_200 += 1 if 100<=numero<=200 else 0
+        qtde_numeros += 1
+    print(f'De {qtde_numeros} gerados, {cont_100_200} estão no intervalo entre 100 e 200!')
 
 #12. Dado um país A, com 5 milhões de habitantes e uma taxa de natalidade de 3% ao
 #ano, e um país B com 7 milhões de habitantes e uma taxa de natalidade de 2% ao
 #ano, fazer um programa que calcule e imprima o tempo necessário para que a
 #população do país A ultrapasse a população do país B.
+def q12() -> None:
+    paisA: int = 5_000_000
+    paisB: int = 7_000_000
+    ano: int = 0
+    while paisA < paisB:
+        ano+=1
+        paisA = paisA*1.03
+        paisB = paisB*1.02
+    print(f'Ao final de {ano} anos, a população do país A superou a de B')
+    print(f'População do país A = {int(paisA)}')
+    print(f'População do país B = {int(paisB)}')
+
+#12.1 Faça uma simulação de investimento para que se descubra quantos anos serão necessários
+# para que se alcance a marca de 1 milhão de reais a partir de um saldo inicial, 
+# um aporte mensal regular e uma taxa de retorno mensal constante.
+def q121() -> None:
+    saldo: float = inputfloat('Saldo inicial: R$ ', min=0)
+    aporte: float = inputfloat('Aporte mensal: R$ ', min=0)
+    taxa: float = inputfloat('Taxa de retorno mensal (%): ', min=0.1)
+    mes = 0
+    
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
