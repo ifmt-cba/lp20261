@@ -156,8 +156,11 @@ def q121() -> None:
     saldo: float = inputfloat('Saldo inicial: R$ ', min=0)
     aporte: float = inputfloat('Aporte mensal: R$ ', min=0)
     taxa: float = inputfloat('Taxa de retorno mensal (%): ', min=0.1)
-    mes = 0
-    
+    mes: int = 0
+    while saldo < 1_000_000:
+        mes += 1
+        saldo = saldo + aporte + saldo*taxa/100
+    print(f'Tempo do investimento: {int(mes/12)} anos e {mes%12} meses.')
 
 #13. Uma empresa de fornecimento de energia elétrica faz a leitura mensal dos medidores
 #de consumo. Para cada consumidor, são digitados os seguintes dados:
