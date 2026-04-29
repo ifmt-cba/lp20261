@@ -12,7 +12,7 @@ RESET: Final = '\033[m'
 #for encontrado o programa deve imprimir a posição desse número na lista, caso
 #contrário, deve imprimir a mensagem: "Nao encontrado!".
 def q1() -> None:
-    numeros: list = [random.randrange(200) for _ in range(15)]
+    numeros: list[int] = [random.randrange(200) for _ in range(15)]
     #forma extensa da linha anterior:
     #for _ in range(15):
     #    numeros.append(random.randrange(200))
@@ -29,7 +29,7 @@ def q1() -> None:
 #2. Faça um programa que armazene 10 letras em uma lista e imprima uma listagem
 #numerada. (ASCII 65-90)
 def q2() -> None:
-    letras: list = [chr(random.randrange(65,91)) for _ in range(10)]
+    letras: list[str] = [chr(random.randrange(65,91)) for _ in range(10)]
     # tipo enumerate cria automaticamente um contador para os elementos da lista começando em 0
     for posicao, letra in enumerate(letras):
         print(f'[{posicao}]: {letra}')
@@ -39,18 +39,23 @@ def q2() -> None:
 # senha sugerida. (ASCII 40-126)
 def q21() -> None:
     tamanho_senha: int = inputint('Informe a qtde de caracteres para senha (4-32): ', min=4, max=32)
-    senha = [chr(random.randrange(40,127)) for _ in range(tamanho_senha)]
+    senha: list[str] = [chr(random.randrange(40,127)) for _ in range(tamanho_senha)]
     print(f'Senha gerada: {"".join(senha)}')
 
 #3. Construa uma programa que armazene 15 números em uma lista e imprima
 #uma listagem numerada contendo o número e uma das mensagens: par ou ímpar.
 def q3() -> None:
-    numeros: list = [random.randrange(200) for _ in range(15)]
-    for posicao, numero in enumerate(numeros):
+    numeros: list[int] = [random.randrange(200) for _ in range(15)]
+    for posicao, numero in enumerate(numeros):  
         print(f'[{str(posicao):<2}]: {str(numero):>3} ({"PAR" if numero%2==0 else "IMPAR"})')
 
 #4. Faça um programa que armazene 8 números em uma lista e imprima todos os
 #números. Ao final, imprima o total de números múltiplos de seis.
+def q4() -> None:
+    numeros: list[int] = [random.randrange(200) for _ in range(8)]
+    print(numeros)
+    multiplos6: int = sum(1 for n in numeros if n % 6 == 0)
+    print(f'Qtde de números que são múltiplos de 6: {multiplos6}')
 
 #5. Faça um programa que armazene as notas das provas 1 e 2 de 15 alunos. Calcule
 #e armazene a média arredondada. Armazene também a situação do aluno: 1-
