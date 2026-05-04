@@ -1,5 +1,5 @@
 import random
-from util import inputint, inputfloat
+from util import inputint, inputfloat, gerar_palavra
 '''
 Lista de Exercícios referentes a coleções e arquivos em python
 '''
@@ -62,6 +62,22 @@ def q4() -> None:
 #Aprovado ou 2-Reprovado. Ao final o programa deve imprimir uma listagem
 #contendo as notas, a média e a situação de cada aluno em formato tabulado.
 #Utilize quantas listas forem necessárias para armazenar os dados.
+def q5() -> None:
+    alunos: list[dict] = []
+    # alimenta uma lista com 15 alunos
+    for c in range(1,16):
+        aluno: dict = {}
+        aluno['matricula']: int = c
+        aluno['nome']: str = gerar_palavra(max=5)
+        aluno['nota1']: float = round(random.random()*10,1)
+        aluno['nota2']: float = round(random.random()*10,1)
+        aluno['media']: float = round((aluno['nota1'] + aluno['nota2'])/2,1)
+        aluno['situacao']: str = 'Aprovado' if aluno['media'] >= 6 else 'Reprovado'
+        alunos.append(aluno)
+    # Percorrer a lista de alunos para imprimir o diário
+    print('MAT\tNOME\tN1\tN2\tMED\tSITUACAO')
+    for aluno in alunos:
+        print(f'{aluno["matricula"]}\t{aluno["nome"]}\t{aluno["nota1"]}\t{aluno["nota2"]}\t{aluno["media"]}\t{aluno["situacao"]}')
 
 #6. Construa um programa que permita armazenar o salário de 20 pessoas. Calcular
 #e armazenar o novo salário sabendo-se que o reajuste foi de 8%. Imprimir uma
