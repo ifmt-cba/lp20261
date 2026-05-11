@@ -49,6 +49,30 @@ def q3() -> None:
     for posicao, numero in enumerate(numeros):  
         print(f'[{str(posicao):<2}]: {str(numero):>3} ({"PAR" if numero%2==0 else "IMPAR"})')
 
+#3.1 Construa uma programa que armazene 15 números em uma lista e salve o resultado
+# de uma listagem numerada contendo o número e uma das mensagens: par ou ímpar em um arquivo
+def q31() -> None:
+    numeros: list[int] = [random.randrange(200) for _ in range(15)]
+    with open('resultado_q31.txt','a') as arquivo:
+        arquivo.write('=======================================================\n')
+        for posicao, numero in enumerate(numeros):  
+            print(f'[{str(posicao):<2}]: {str(numero):>3} ({"PAR" if numero%2==0 else "IMPAR"})')
+            arquivo.write(f'[{str(posicao):<2}]: {str(numero):>3} ({"PAR" if numero%2==0 else "IMPAR"})\n')
+
+#3.2 Construa uma programa que leia 15 números de um arquivo e salve o resultado
+# de uma listagem numerada contendo o número e uma das mensagens: par ou ímpar em um arquivo
+def q32() -> None:
+    numeros: list[int] = []
+    with open ('q32_input.txt','r') as arquivo:
+        for linha in arquivo:
+            numeros.append(int(linha))
+
+    with open('q32_output.txt','a') as arquivo:
+        arquivo.write('=======================================================\n')
+        for posicao, numero in enumerate(numeros):  
+            print(f'[{str(posicao):<2}]: {str(numero):>3} ({"PAR" if numero%2==0 else "IMPAR"})')
+            arquivo.write(f'[{str(posicao):<2}]: {str(numero):>3} ({"PAR" if numero%2==0 else "IMPAR"})\n')
+
 #4. Faça um programa que armazene 8 números em uma lista e imprima todos os
 #números. Ao final, imprima o total de números múltiplos de seis.
 def q4() -> None:
