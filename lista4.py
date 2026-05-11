@@ -114,6 +114,34 @@ def q5() -> None:
 #• lucro < 10%
 #• 10% <= lucro <= 20%
 #• lucro > 20%
+def q7() -> None:
+    QTDE_MAX: int = 5
+    qtde_10: int = 0
+    qtde_10_20: int = 0
+    qtde_20:int = 0
+    compra: list[float] = [round(random.random()*5000,2) for _ in range(QTDE_MAX)]
+    venda: list[float] = []
+    lucro: list[float] = []
+    for pos in range(QTDE_MAX):
+        valor_venda:int  = 0
+        while valor_venda <= compra[pos]:
+            valor_venda = round(random.random()*10000,2)
+        venda.append(valor_venda)
+        lucro_monetario = venda[pos] - compra[pos]
+        lucro_percentual = 1-lucro_monetario/venda[pos]
+        lucro.append(round(lucro_percentual*100,2))
+        if lucro_percentual < 0.1:
+            qtde_10 += 1
+        elif lucro_percentual <= 0.2:
+            qtde_10_20 += 1
+        else:
+            qtde_20 += 1
+    print(compra)
+    print(venda)
+    print(lucro)
+    print(f'Qtde de produtos com lucro inferior a 10%: {qtde_10}')
+    print(f'Qtde de produtos com lucro entre 10% e 20%: {qtde_10_20}')
+    print(f'Qtde de produtos com lucro superior a 20%: {qtde_20}')
 
 #8. Construa um programa que armazene o código, a quantidade, o valor de compra
 #e o valor de venda de 30 produtos. A listagem pode ser de todos os produtos ou
